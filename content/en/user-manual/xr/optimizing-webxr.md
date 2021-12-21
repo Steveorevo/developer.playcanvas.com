@@ -6,9 +6,9 @@ position: 3
 
 ## Introduction
 
-A high and consistent framerate is critical for making and enjoyable XR experience. When creating VR/AR content it is more important than ever to test and optimize early in development and maintain the target framerate throughout development.
+A high and consistent framerate is critical for making an enjoyable XR experience. When creating VR/AR content it is more important than ever to test and optimize early in development and maintain the target framerate throughout development.
 
-Rendering WebXR is expensive due to the fact that the scene must be rendered once for each view (eye). PlayCanvas engine contains many optimizations to ensure that VR rendering doesn't duplicate too much effort, but stereo rendering is still more expensive that mono rendering. In addition, devices like the Oculus Rift and HTC Vive demand higher frame rates like, 75Hz or 90Hz, which means there is even less time to render a frame. Mobile VR, whilst it doesn't have the high frame rates, may have another issue which is the lack of native support for the distortion rendering means that this post-process stage is done in Javascript and WebGL adding additional overhead.
+Rendering WebXR is expensive due to the fact that the scene must be rendered once for each view (eye). PlayCanvas engine contains many optimizations to ensure that VR rendering doesn't duplicate too much effort, but stereo rendering is still more expensive than mono rendering. In addition, devices like the Oculus Rift and HTC Vive demand higher frame rates like, 75Hz or 90Hz, which means there is even less time to render a frame. Mobile VR may have to contend with another issue: lack of native support for the distortion rendering means that this post-process stage is done in Javascript and WebGL adding additional overhead.
 
 But, all is not lost. PlayCanvas includes a number of features specifically designed to let your application do more in less time.
 
@@ -28,11 +28,11 @@ Fill rate refers to the number of shader operations that are applied to each pix
 
 Overdraw refers to how many pixels are overwritten by drawing geometry that is obscured by other geometry closer to the camera. Too much overdraw shows that you are wasting GPU processing trying to draw pixels that are not visible.
 
-Using an extension like [WebGL Insight][2] can help you visualize overdraw
+Using an extension like [WebGL Insight][2] can help you visualize overdraw.
 
 ### Garbage collection stalls
 
-Web browsers feature automatic garbage collection of unused Javascript objects. The PlayCanvas engine is designed to minimize runtime allocations and you should try to do the same in your code. Pre-allocate vectors and other objects and re-use them so that there are not lots of objects created and discarded every frame.
+Web browsers feature automatic garbage collection of unused Javascript objects. The PlayCanvas engine is designed to minimize runtime allocations and you should try to do the same in your code. Pre-allocate vectors and other objects and re-use them so that there are not a lot of objects created and discarded every frame.
 
 ### Profiling Tools
 
